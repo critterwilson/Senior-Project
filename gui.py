@@ -62,7 +62,7 @@ fileGroup.pack(padx=10, pady=10)
 filePath = StringVar()
 fileEntry = Entry(fileGroup, textvariable=filePath, width=20, 
                     state="disabled", cursor="arrow")
-Button(fileGroup, text="?", command=)
+#Button(fileGroup, text="?", command=)
 fileEntry.pack(side=LEFT)
 Button(fileGroup, text="Select", command=lambda : browse_button()).pack(side=LEFT)
 
