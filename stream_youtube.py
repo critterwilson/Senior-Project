@@ -15,30 +15,32 @@ import logging
 from imutils.video import VideoStream
 from imutils.video import FPS
 
+# get the URL from the command line argument
 url = sys.argv[1]
 
+# All of the possible classes in our model
 CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
 	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"]
+# We don't give a rat's patootie about anything but "Person"
 IGNORE = ["background", "aeroplane", "bicycle", "bird", "boat",
 	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
 	"dog", "horse", "motorbike", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"]
 # assign random colors to each class
 COLORS = np.random.uniform(0, 255, size=(len(CLASSES), 3))
-# url to stream from
-#url = 'https://youtu.be/oUUStvjVyIE'
 # create new stream from url
 vPafy = pafy.new(url)
 # get the best quality video (no audio)
 play = vPafy.getbestvideo(preftype="webm")
-# our threshold (only classify as a class if we are over 10% sure)
+# our threshold (classify as a class if we are over 1% sure)
+## Note that since we are only looking for people, we shouldn't have an issue
+## with such a low threshold value.
 threshold = 0.01
 # the model we are going to be using
 net = cv2.dnn.readNetFromCaffe("MobileNetSSD_deploy.prototxt.txt", 
                                "MobileNetSSD_deploy.caffemodel")
-
 #start the video
 stream = cv2.VideoCapture(play.url)
 while (True):

@@ -8,12 +8,12 @@ In the 'YouTube URL' entry field, the user may enter a YouTube URL. The video wi
 
 In the 'File' field, the user may select a downloaded .mp4 file to run the machine learning model on. 
 
-#### *Note:
-If both fields have values entered into them, the YouTube video will take precedence and run. In other words, if you would like to run the system on a local file, you must remove all text from the YouTube URL field.
-
 Select 'Run' to open a new window with the stream.
 
 Select 'Quit' to close the application.
+
+#### *Note:
+If both fields have values entered into them, the YouTube video will take precedence and run. In other words, if you would like to run the system on a local file, you must remove all text from the YouTube URL field.
 
 ### During the Stream
 p = Pause video
