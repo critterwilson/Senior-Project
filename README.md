@@ -1,4 +1,4 @@
-# Bar-Down Hockey Player Detecotr
+# Bar-Down Hockey Player Detector
 
 Bar-Down is a Computer Vision project created with the intent of identifying hockey players in footage.
 
@@ -11,7 +11,13 @@ In the 'File' field, the user may select a downloaded .mp4 file to run the machi
 #### *Note:
 If both fields have values entered into them, the YouTube video will take precedence and run. In other words, if you would like to run the system on a local file, you must remove all text from the YouTube URL field.
 
+Select 'Run' to open a new window with the stream.
+
+Select 'Quit' to close the application.
+
 ### During the Stream
 p = Pause video
+
 [any key, during pause] = Resume video
+
 q = Close the video
